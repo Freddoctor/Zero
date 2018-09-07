@@ -1,0 +1,337 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  font-size: .24rem;
+  -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+  /* font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; */
+  font-family: "SF Pro SC","HanHei SC","SF Pro Text","Myriad Set Pro","SF Pro Icons","PingFang SC","Helvetica Neue","Helvetica","Arial",sans-serif;
+  /* touch-action: none; */
+}
+
+#app {
+  position: relative;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  /* touch-action: none; */
+}
+
+h1, h2, h3, h4, h5 {
+  font-weight: normal;
+  font-style: normal;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul li {
+  list-style: none;
+}
+
+/* 主页修改 */
+
+.homeLists {
+  display: -webkit-box;
+  -webkit-box-align: center;
+  -webkit-box-pack: justify;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: .4rem .1rem .34rem;
+  border-bottom: .2rem solid #eaeaea;
+  background: #fff;
+}
+
+.homeLists a {
+  display: block;
+  margin: 0 .2rem;
+}
+
+.homeLists a img {
+  display: block;
+  height: .8rem;
+  width: .8rem;
+  margin: 0 auto;
+}
+
+.homeLists span {
+  display: block;
+  line-height: .34rem;
+  font-size: .24rem;
+  color: rgb(38, 45, 56);
+  text-align: center;
+}
+
+.investLists {
+  position: relative;
+  overflow: hidden;
+  background: #fff;
+  border-bottom: .2rem solid #eaeaea;
+}
+
+.investLists:before, .investLists:after {
+  content: "";
+  position: absolute;
+  background-color: #f1f1f1;
+}
+
+.investLists:before {
+  left: .03rem;
+  right: .03rem;
+  top: 50%;
+  height: 1px;
+  -webkit-transform: translateY(-50%) scaleY(0.5);
+  transform: translateY(-50%) scaleY(0.5);
+}
+
+.investLists:after {
+  left: 50%;
+  bottom: .12rem;
+  top: .22rem;
+  width: 1px;
+  -webkit-transform: translateX(-50%) scaleX(0.5);
+  transform: translateX(-50%) scaleX(0.5);
+}
+
+.investLists ul {
+  overflow: hidden;
+}
+
+.investLists li {
+  float: left;
+  width: 50%;
+}
+
+.investLists li a {
+  overflow: hidden;
+  padding: 0 .25rem 0 .35rem;
+  height: 1.44rem;
+  font-size: .24rem;
+  display: -webkit-box;
+  -webkit-box-align: center;
+  -webkit-box-pack: justify;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-sizing: border-box;
+}
+
+.investLists li .area_cms {
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+  flex: 1;
+  max-width: 2.2rem;
+}
+
+.investLists li img {
+  display: block;
+  width: .9rem;
+  height: .9rem;
+  background: #ccc;
+}
+
+.investLists li h3 {
+  font-size: .24rem;
+  overflow: hidden;
+  line-height: .24rem;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  color: #343434;
+}
+
+.investLists li p {
+  line-height: .3rem;
+  overflow: hidden;
+  font-size: .18rem;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  color: #535353;
+}
+
+.investLists li p:nth-of-type(1) {
+  margin-top: .12rem;
+}
+
+/* 分享页 */
+
+.inNavigation ul {
+  overflow: hidden;
+  border-bottom: 0.2rem solid #eaeaea;
+}
+
+.inNavigation li {
+  float: left;
+  width: 25%;
+  padding: .3rem 0;
+  box-sizing: border-box;
+  border-right: 1px solid #e0e0e0;
+}
+
+.inNavigation li:nth-of-type(4n+4) {
+  border-right: 0;
+}
+
+.inNavigation li.borb_1 {
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.inNavigation li a {
+  display: block;
+  font-size: .24rem;
+  color: rgb(38, 45, 56);
+}
+
+.inNavigation li a img {
+  display: block;
+  width: .8rem;
+  height: .6rem;
+  margin: 0 auto;
+}
+
+.inNavigation li a span {
+  display: block;
+  text-align: center;
+  line-height: .24rem;
+  margin-top: .1rem;
+}
+
+.innerSwiper {
+  touch-action: none;
+}
+
+.innerSwiper .swiper-main {
+  height: 2.7rem;
+}
+
+.innerSwiper .swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: #c00;
+}
+
+.innerSwiper .swiper-main .swiper-slide i {
+  position: absolute;
+  top: .2rem;
+  right: 0;
+  height: .32rem;
+  line-height: .32rem;
+  width: .64rem;
+  font-size: .2rem;
+  text-align: center;
+  font-style: normal;
+  color: #fff;
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: .16rem 0 0 .16rem;
+}
+
+.innerSwiper .swiper-container-horizontal>.swiper-pagination-bullets, .innerSwiper .swiper-pagination-custom, .innerSwiper .swiper-pagination-fraction {
+  font-size: 0;
+  bottom: .26rem;
+  text-align: right;
+  padding-right: .19rem;
+  box-sizing: border-box;
+}
+
+.innerSwiper .swiper-pagination-bullet {
+  display: inline-block;
+  width: .11rem;
+  height: .11rem;
+  border-radius: 100%;
+  background: #4f555f;
+  opacity: .9;
+}
+
+.innerSwiper .swiper-container-horizontal>.swiper-pagination-bullets .swiper-pagination-bullet {
+  margin: 0 .07rem;
+}
+
+.innerSwiper .swiper-pagination-bullet-active {
+  opacity: 1;
+  background: #ccd0d5;
+}
+
+/* 平台说明 */
+
+.section-wrap ul li {
+  padding: .46rem 0 .5rem;
+  height: 2.19rem;
+  box-sizing: border-box;
+  border-top: .1rem solid #eaeaea;
+  background: #fff;
+}
+
+.section-wrap ul li h3 {
+  padding: 0 .32rem;
+  font-size: .3rem;
+  line-height: .5rem;
+  font-weight: normal;
+  color: rgb(38, 46, 56);
+}
+
+.section-wrap ul li p {
+  padding: .15rem .7rem 0 .3rem;
+  font-size: .18rem;
+  line-height: .24rem;
+  color: #8d8d8d;
+}
+
+/* 公司介绍 */
+
+.section-content {
+  padding: .28rem .3rem .46rem;
+  background: #fff;
+}
+
+.section-content h5 {
+  font-size: .18rem;
+  line-height: .4rem;
+  font-weight: normal;
+  color: #8d8d8d;
+}
+
+.section-content p {
+  padding-top: 0.08rem;
+  line-height: .44rem;
+  font-size: .24rem;
+  font-weight: normal;
+  text-align: justify;
+  color: #262e38;
+}
+
+.list-dealer .article footer span.baiduGg_home {
+  height: .31rem;
+  line-height: .31rem;
+  width: 100%;
+  display: -webkit-box !important;
+  -webkit-box-align: center !important;
+  display: flex !important;
+  align-items: center !important;
+}
+
+.baiduGg_home iframe {
+  display: block;
+  position: relative;
+  height: 36px !important;
+  width: 80rem !important;
+  -webkit-transform: scale(0.5) translateX(-50%);
+  transform: scale(0.5) translateX(-50%);
+}
+
+@media screen and (min-device-width: 640px) {
+  .baiduGg_home iframe {
+    height: .62rem !important;
+    -webkit-transform: scale(1) translateX(0);
+    transform: scale(1) translate(0, 18%);
+  }
+}

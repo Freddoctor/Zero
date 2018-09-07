@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>chat,io</title>
+  <style media="screen">
+    .footer {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 5rem;
+    }
+
+    .footer article {
+      display: block;
+      width: 90%;
+      float: left;
+      height: 100%;
+      border: 1px solid #ccc;
+    }
+
+    .footer button {
+      width: 9%;
+      float: right;
+      height: 100%;
+      background: #a2a2a2;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      font-size: 18px;
+    }
+
+    #content {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 6rem;
+      overflow-y: scroll;
+      background: #f4f3f3;
+    }
+  </style>
+</head>
+
+<body>
+  <section id="content">
+  </section>
+  <footer class="footer">
+    <article class="" contenteditable="true" id="msg"></article>
+    <button type="button" name="button" id="btn">发送</button>
+  </footer>
+  <script src="./socket.io.js" type="text/javascript"></script>
+  <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+  <script type="text/javascript">
+    var socket = io.connect('localhost:3500/'); // 链接路径
+    var msg = document.getElementById("msg");
+    var btn = document.getElementById("btn");
+    var saveList = [];
+
+    socket.on('news', function(data) { //实时接收news
+      console.log(data.msg);
+      if (data.msg instanceof Array && data.msg.length) {
+        data.msg.forEach(function(item, index) {
+          $("#content").append("<p>" + item + "</p>");
+        })
+      } else if (typeof data.msg == 'string') {
+        $("#content").append("<p>" + data.msg + "</p>");
+      }
+      localStorage.setItem("msg",data.msg)
+    });
+
+    socket.on('connect', function() { //链接成功执行
+      console.log("链接中......")
+    })
+
+    socket.on('disconnect', function() { //链接未成功时
+      console.log("断开.......")
+    })
+
+    function ConChat(str) {
+      this.msg = str;
+      updataConnect.call(this)
+    }
+
+    function updataConnect() {
+      socket.emit('zero', this.msg);
+    }
+
+    btn.addEventListener("click", function() {
+      var str = msg.innerHTML;
+      var conchat = new ConChat(str);
+    })
+  </script>
+</body>
+
+</html>

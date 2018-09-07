@@ -1,0 +1,29 @@
+<!DOCTYPE html><html><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no"><meta name=format-detection content="telephone=no, email=no"><title>zero</title><link href=./static/css/app.d50f37b572c0875fbb7222f89767fc8b.css rel=stylesheet></head><body><div id=app></div><script src=//cbjs.baidu.com/js/m.js></script><script src=//res.wx.qq.com/open/js/jweixin-1.0.0.js></script><script type=text/javascript>class Animate { //动画类
+      constructor(name, age) {
+        this.name = name;
+        this.age = age;
+      }
+      hide() {
+        console.log("hidden");
+        return this;
+      }
+      show() {
+        console.log("show");
+        return this;
+      }
+    }
+
+    class Person extends Animate {
+      constructor(...args) {
+        super(...args); ///super 继承之后函数添加
+      }
+      play() {
+        return this;
+      }
+      init() {
+        this.hide();
+        return this;
+      }
+    }
+
+    console.log(new Person("1,2", "我滴").init())</script><script type=text/javascript src=./static/js/manifest.df67ef105c7b136e37fb.js></script><script type=text/javascript src=./static/js/vendor.ec114613ce060fb60066.js></script><script type=text/javascript src=./static/js/app.a3738ebbc65894e40ce6.js></script></body></html>
