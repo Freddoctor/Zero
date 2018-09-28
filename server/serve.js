@@ -5,7 +5,7 @@ const bodyParser = require('body-parser'); //调用模板
 // 设置端口
 var app = express();
 
-app.set('port', 888);
+app.set('port', 8888);
 
 app.get('/', function(req, res) {
   res.send('Hello World!');
